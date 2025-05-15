@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Cosméticos</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Catálogo de Cosméticos</h1>
+    <p>Stock actualizado desde Google Sheets</p>
+  </header>
+
+  <div class="filtros">
+    <button class="btn-filtro active" data-categoria="todo">Stock</button>
+    <button class="btn-filtro" data-categoria="labios">Llegan esta Semana</button>
+    <button class="btn-filtro" data-categoria="piel">Catalogo</button>
+  </div>
+
+  <div class="contenedor-productos" id="productos">
+    <!-- Los productos se cargarán aquí con JavaScript -->
+    <p>Cargando productos...</p>
+  </div>
+
+  <footer>
+    <p>© 2023 - Catálogo de Cosméticos</p>
+  </footer>
+
+  <script src="script/script.js"></script>
+</body>
+</html>
