@@ -17,12 +17,15 @@ async function cargarProductos() {
   }));
 }
 
-// Mostrar productos en HTML
+// Mostrar productos en HTML (solo si tienen stock)
 function mostrarProductos(productos) {
   const contenedor = document.getElementById("productos");
   contenedor.innerHTML = "";
 
-  productos.forEach(producto => {
+  // Filtrar productos con stock > 0
+  const productosConStock = productos.filter(producto => producto.stock > 0);
+
+  productosConStock.forEach(producto => {
     const divProducto = document.createElement("div");
     divProducto.className = "producto";
     divProducto.dataset.categoria = producto.categoria;
