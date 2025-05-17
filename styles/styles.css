@@ -33,7 +33,13 @@ body {
     cursor: pointer;
     border-radius: 20px;
   }
-  
+
+    #btn-catalogo{
+      text-decoration: none;
+      color: #333;
+    
+  }
+
   .btn-filtro.active {
     background: #ff85a2;
     color: white;
