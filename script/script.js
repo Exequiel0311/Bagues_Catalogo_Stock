@@ -5,7 +5,7 @@ const API_KEY = "AIzaSyD5fPLSX_lfuT2szg6nTWiN1qRrBIqkHj4"; // Obtén una en: htt
 // Cargar productos desde Google Sheets
 async function cargarProductos() {
   const response = await fetch(
-    `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/Productos!A2:E100?key=${API_KEY}`
+    `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/Productos!A2:E?key=${API_KEY}`
   );
   const data = await response.json();
   return data.values.map(row => ({
