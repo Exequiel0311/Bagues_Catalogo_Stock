@@ -13,17 +13,22 @@ async function cargarProductos() {
     categoria: row[1],
     precio: row[2],
     stock: row[3],
-    imagen: row[4],
   }));
 }
 
-// Mostrar productos en HTML (solo si tienen stock)
+// Mostrar productos en HTML (con imágenes WEBP automáticas)
 function mostrarProductos(productos) {
   const contenedor = document.getElementById("productos");
   contenedor.innerHTML = "";
 
-  // Filtrar productos con stock > 0
-  const productosConStock = productos.filter(producto => producto.stock > 0);
+  // Filtrar productos con stock > 0 y generar ruta de imagen
+  const productosConStock = productos
+    .filter(producto => producto.stock > 0)
+    .map(producto => ({
+      ...producto,
+      // Genera la ruta de la imagen: "nombre-del-producto.webp" (en minúsculas y sin espacios)
+      imagen: `${producto.nombre.toLowerCase().replace(/\s+/g, '-')}.webp`
+    }));
 
   productosConStock.forEach(producto => {
     const divProducto = document.createElement("div");
@@ -31,7 +36,7 @@ function mostrarProductos(productos) {
     divProducto.dataset.categoria = producto.categoria;
 
     divProducto.innerHTML = `
-      <img src="${producto.imagen}" alt="${producto.nombre}">
+      <img src="images/${producto.imagen}" alt="${producto.nombre}" onerror="this.src='images/default.webp'">
       <div class="producto-info">
         <h3>${producto.nombre}</h3>
         <p>Precio: $${producto.precio}</p>
