@@ -32,6 +32,8 @@ body {
     background: #f0f0f0;
     cursor: pointer;
     border-radius: 20px;
+    text-decoration: none;
+    color: #333;
   }
   
   .btn-filtro.active {
