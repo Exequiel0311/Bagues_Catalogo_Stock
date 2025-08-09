@@ -34,7 +34,7 @@ function mostrarProductos(productos) {
       <img src="${producto.imagen}" alt="${producto.nombre}">
       <div class="producto-info">
         <h3>${producto.nombre}</h3>
-        <p>Precio: $${producto.precio}</p>
+       <!-- <p>Precio: $${producto.precio}</p> --> 
         <p>Stock: ${producto.stock} unidades</p>
       </div>
     `;
